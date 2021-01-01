@@ -33,6 +33,7 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
+    "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   },
   "husky": {
