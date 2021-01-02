@@ -3,21 +3,25 @@
  */
 const { Sequelize } = require('sequelize')
 const mysqlConfig = require('./src/config/mysql')
+const connect = require('./src/connect')
+const mysqlConf = mysqlConfig.config(
+	'test',
+	'root',
+	'zhang2684323',
+	'localhost',
+	3306
+)
 
-// mysql连接
-const mysqlConf = mysqlConfig.config('test', 'root', 'zhang2684323', 'localhost', 3306)
-const sequelize = new Sequelize(mysqlConf.db, mysqlConf.username, mysqlConf.passowrd, {
-  host: mysqlConf.host,
-  port: mysqlConf.port,
-  dialect: mysqlConf.dialect
-})
-
-async function mysqlTest() {
-  try {
-    await sequelize.authenticate()
-    console.log('连接成功')
-  } catch (error) {
-    console.error(error)
-  }
+function test() {
+	connect.dbConnection(
+		Sequelize,
+		mysqlConf.db,
+		mysqlConf.username,
+		mysqlConf.passowrd,
+		mysqlConf.host,
+		mysqlConf.port,
+		mysqlConf.dialect
+	)
 }
-mysqlTest()
+
+test()
