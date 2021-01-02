@@ -2,9 +2,9 @@
  * 测试sequelize连接数据库
  */
 const { Sequelize } = require('sequelize')
-const mysqlConfig = require('./src/config/mysql')
-const connect = require('./src/connect')
-const mysqlConf = mysqlConfig.config(
+const { config } = require('./src/config/mysql')
+const { dbConnection } = require('./src/connect')
+const mysqlConf = config(
 	'test',
 	'root',
 	'zhang2684323',
@@ -13,7 +13,7 @@ const mysqlConf = mysqlConfig.config(
 )
 
 function test() {
-	connect.dbConnection(
+	dbConnection(
 		Sequelize,
 		mysqlConf.db,
 		mysqlConf.username,
