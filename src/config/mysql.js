@@ -8,7 +8,8 @@ const config = (db, username, passowrd, host, port) => {
     username,
     passowrd,
     host,
-    port
+    port,
+    dialect: 'mysql'
   }
 }
 module.exports = {

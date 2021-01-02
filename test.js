@@ -9,7 +9,7 @@ const mysqlConf = mysqlConfig.config('test', 'root', 'zhang2684323', 'localhost'
 const sequelize = new Sequelize(mysqlConf.db, mysqlConf.username, mysqlConf.passowrd, {
   host: mysqlConf.host,
   port: mysqlConf.port,
-  dialect: 'mysql'
+  dialect: mysqlConf.dialect
 })
 
 async function mysqlTest() {
