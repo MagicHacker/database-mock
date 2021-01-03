@@ -4,13 +4,7 @@
 const { Sequelize } = require('sequelize')
 const { config } = require('./src/config/mysql')
 const { dbConnection } = require('./src/connect')
-const mysqlConf = config(
-	'test',
-	'root',
-	'zhang2684323',
-	'localhost',
-	3306
-)
+const mysqlConf = config('test', 'root', 'zhang2684323', 'localhost', 3306)
 
 function test() {
 	dbConnection(

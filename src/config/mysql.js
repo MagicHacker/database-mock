@@ -3,15 +3,15 @@
  */
 
 const config = (db, username, passowrd, host, port) => {
-  return {
-    db,
-    username,
-    passowrd,
-    host,
-    port,
-    dialect: 'mysql'
-  }
+	return {
+		db,
+		username,
+		passowrd,
+		host,
+		port,
+		dialect: 'mysql'
+	}
 }
 module.exports = {
-  config
+	config
 }
