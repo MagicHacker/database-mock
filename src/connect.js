@@ -8,15 +8,7 @@
  * @param {*} port 端口号
  * @param {*} dialect 数据库方言
  */
-const dbConnection = async (
-	Sequelize,
-	database,
-	username,
-	password,
-	host,
-	port,
-	dialect
-) => {
+const dbConnection = async (Sequelize, database, username, password, host, port, dialect) => {
 	const sequelize = new Sequelize(database, username, password, {
 		host,
 		port,
