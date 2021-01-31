@@ -25,4 +25,6 @@ const connect = () => {
 	})
 }
 
-connect()
+module.exports = {
+	connect
+}
