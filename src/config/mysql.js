@@ -2,11 +2,11 @@
  * mysql 连接配置文件
  */
 
-const config = (db, username, passowrd, host, port) => {
+const config = ({ database, username, password, host, port }) => {
 	return {
-		db,
+		database,
 		username,
-		passowrd,
+		password,
 		host,
 		port,
 		dialect: 'mysql'

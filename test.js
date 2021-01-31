@@ -4,18 +4,23 @@
 const { Sequelize } = require('sequelize')
 const { config } = require('./src/config/mysql')
 const { dbConnection } = require('./src/connect')
-const mysqlConf = config('test', 'root', 'zhang2684323', 'localhost', 3306)
+const mysqlConf = config({
+	database: 'test',
+	username: 'root',
+	password: 'zhang2684323',
+	host: 'localhost',
+	port: 3306
+})
 
 function test() {
-	dbConnection(
-		Sequelize,
-		mysqlConf.db,
-		mysqlConf.username,
-		mysqlConf.passowrd,
-		mysqlConf.host,
-		mysqlConf.port,
-		mysqlConf.dialect
-	)
+	dbConnection(Sequelize, {
+		database: mysqlConf.database,
+		username: mysqlConf.username,
+		password: mysqlConf.password,
+		host: mysqlConf.host,
+		port: mysqlConf.port,
+		dialect: mysqlConf.dialect
+	})
 }
 
 test()
