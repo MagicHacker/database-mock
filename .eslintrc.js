@@ -7,8 +7,8 @@ module.exports = {
 		commonjs: true,
 		es6: true
 	},
+	parser: 'babel-eslint',
 	parserOptions: {
-		parser: 'babel-eslint',
 		ecmaVersion: 2020,
 		sourceType: 'module'
 	},
